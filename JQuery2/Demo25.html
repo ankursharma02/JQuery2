@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div {
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<div id="div1" style="position: relative;"  >demo</div>
+<!-- 
+<p>Mouse over the rectangle above to get the horizontal and vertical coordinates of your mouse pointer.</p>
+
+<p id="demo" style="position: relative;"></p> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+   
+    $(document).ready(function(){
+    $("div").on({
+     
+        // mouseleave: function(){
+        //     $(this).css("background-color", "white");
+        // }, 
+        mouseenter: function(){
+      //      $("*").css("background-color", "white"); 
+        //    $(this).css("background-color", "lightgray");
+            var x = event.clientX;
+            var y = event.clientY;
+            x=x+"px";
+            y=y+"px";
+            //var coor = "X coords: " + x + ", Y coords: " + y;
+            //  document.getElementById("demo1").innerHTML = coor;
+            $("#div1").css("left",x);
+            $("#div1").css("top",x);
+            $("#div1").css("display","block");
+            $("#div1").show();
+   // document.getElementById("demo1").style.left=x+"px";
+   // document.getElementById("demo1").style.right=y+"px";
+        }  
+    });
+});    
+
+
+</script>
+
+</body>
+</html>
